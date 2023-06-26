@@ -87,11 +87,14 @@ func (e *ExcelToLine) createLineExcel(excelData []SrcExcel) error {
 			Font: excelize.Font{
 				Color: "#333",
 			},
+			MajorGridLines: true,
 		},
 		YAxis: excelize.ChartAxis{
 			Font: excelize.Font{
 				Color: "#333",
 			},
+			MajorGridLines: true,
+			MajorUnit:      0.1,
 		},
 		Series: []excelize.ChartSeries{
 			{
