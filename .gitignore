@@ -2,3 +2,5 @@
 .vscode
 .history
 __debug_bin
+
+excel/dist.xlsx
