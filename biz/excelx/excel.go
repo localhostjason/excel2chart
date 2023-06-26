@@ -80,6 +80,9 @@ func (e *ExcelToLine) createLineExcel(excelData []SrcExcel) error {
 
 	chartOption := &excelize.Chart{
 		Type: excelize.Line,
+		Format: excelize.GraphicOptions{
+			OffsetX: 62,
+		},
 		Title: excelize.ChartTitle{
 			Name: "2023年体温记录",
 		},
