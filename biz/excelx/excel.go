@@ -81,7 +81,7 @@ func (e *ExcelToLine) createLineExcel(excelData []SrcExcel) error {
 	chartOption := &excelize.Chart{
 		Type: excelize.Line,
 		Format: excelize.GraphicOptions{
-			OffsetX: 62,
+			OffsetX: 0,
 		},
 		Title: excelize.ChartTitle{
 			Name: "2023年体温记录",
@@ -108,7 +108,7 @@ func (e *ExcelToLine) createLineExcel(excelData []SrcExcel) error {
 		},
 	}
 
-	err = f.AddChart("Sheet1", "C1", chartOption)
+	err = f.AddChart("Sheet1", "D1", chartOption)
 	if err != nil {
 		return err
 	}
