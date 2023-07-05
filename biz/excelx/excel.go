@@ -76,7 +76,7 @@ func (e *ExcelToLine) createLineExcel(excelData []SrcExcel) error {
 	}
 
 	countNumber := len(excelData) + 1
-	print(00, countNumber)
+	//print(00, countNumber)
 
 	chartOption := &excelize.Chart{
 		Type: excelize.Line,
