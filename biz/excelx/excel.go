@@ -91,6 +91,7 @@ func (e *ExcelToLine) createLineExcel(excelData []SrcExcel) error {
 				Color: "#333",
 			},
 			MajorGridLines: true,
+			TickLabelSkip:  2,
 		},
 		YAxis: excelize.ChartAxis{
 			Font: excelize.Font{
