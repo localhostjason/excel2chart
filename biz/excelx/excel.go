@@ -84,14 +84,14 @@ func (e *ExcelToLine) createLineExcel(excelData []SrcExcel) error {
 			OffsetX: 0,
 		},
 		Title: excelize.ChartTitle{
-			Name: "2023年体温记录",
+			Name: "2023年7月体温记录",
 		},
 		XAxis: excelize.ChartAxis{
 			Font: excelize.Font{
 				Color: "#333",
 			},
 			MajorGridLines: true,
-			TickLabelSkip:  2,
+			TickLabelSkip:  1,
 		},
 		YAxis: excelize.ChartAxis{
 			Font: excelize.Font{
