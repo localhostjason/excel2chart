@@ -6,18 +6,23 @@ import (
 	"github.com/xuri/excelize/v2"
 	"path/filepath"
 	"strconv"
+	"strings"
 )
 
 type ExcelToLine struct {
 	SrcFile  string
 	DistFile string
+	Title    string
 }
 
 func NewExcelToLine(srcFile string) *ExcelToLine {
 	exeDir, _ := util.GetExeDir()
 	distFile := filepath.Join(exeDir, "excel", "dist.xlsx")
 
-	return &ExcelToLine{SrcFile: srcFile, DistFile: distFile}
+	filename := filepath.Base(srcFile)
+	list := strings.Split(filename, "_")
+	title := list[0]
+	return &ExcelToLine{SrcFile: srcFile, DistFile: distFile, Title: title}
 }
 
 func (e *ExcelToLine) readExcel() ([]SrcExcel, error) {
@@ -84,7 +89,7 @@ func (e *ExcelToLine) createLineExcel(excelData []SrcExcel) error {
 			OffsetX: 0,
 		},
 		Title: excelize.ChartTitle{
-			Name: "2023年7月体温记录",
+			Name: e.Title + "体温记录",
 		},
 		XAxis: excelize.ChartAxis{
 			Font: excelize.Font{
